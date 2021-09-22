@@ -1,0 +1,5 @@
+f 150 4 Sychiv 100 5000
+f 201 7 Antonovycha 600 2300
+f 72 5 Rynok 400 3002
+p 400 2 Pidvalna 1000 1000 45 false
+v 380 16 Zelena 300 9000 45000 true
