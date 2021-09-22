@@ -1,90 +1,45 @@
 package com.company;
 
-import java.util.Comparator;
-import java.util.Scanner;
-
-public class Flat implements Comparable<Flat>
+public class Penthouse extends Flat
 {
-    private double area;
-    private int roomCount;
-    private String residentalArea;
-    private double pricePeSquareMeter;
-    private double infrastructureDistance;
+    private double terraceArea;
+    private boolean hasPool;
 
-    public Flat(double area, int roomCount, String residentalArea, double pricePeSquareMeter, double infrastructureDistance ) {
-        this.area = area;
-        this.roomCount = roomCount;
-        this.residentalArea = residentalArea;
-        this.pricePeSquareMeter = pricePeSquareMeter;
-        this.infrastructureDistance = infrastructureDistance;
+    public Penthouse(double area, int roomCount, String residentalArea, double pricePeSquareMeter, double infrastructureDistance, double terraceArea, boolean hasPool) {
+        super(area, roomCount, residentalArea, pricePeSquareMeter, infrastructureDistance);
+        this.terraceArea = terraceArea;
+        this.hasPool = hasPool;
     }
-    public Flat() {
-        this.area = 0.0;
-        this.roomCount = 0;
-        this.residentalArea = "none";
-        this.pricePeSquareMeter = 0.0;
-        this.infrastructureDistance = 0.0;
+    public Penthouse() {
+        super();
+        this.terraceArea = 0.0;
+        this.hasPool = false;
     }
 
-    public double getArea() {
-        return area;
+    public double getTerraceArea() {
+        return terraceArea;
     }
-    public void setArea(double area) {
-        this.area = area;
-    }
-
-    public int getRoomCount() {
-        return roomCount;
-    }
-    public void setRoomCount(int roomCount) {
-        this.roomCount = roomCount;
+    public void setTerraceArea(double terraceArea) {
+        this.terraceArea = terraceArea;
     }
 
-    public String getResidentalArea() {
-        return residentalArea;
+    public boolean isHasPool() {
+        return hasPool;
     }
-    public void setResidentalArea(String residentalArea) {
-        this.residentalArea = residentalArea;
-    }
-
-    public double getPricePeSquareMeter() {
-        return pricePeSquareMeter;
-    }
-    public void setPricePeSquareMeter(double pricePeSquareMeter) {
-        this.pricePeSquareMeter = pricePeSquareMeter;
-    }
-
-    public double getInfrastructureDistance() {
-        return infrastructureDistance;
-    }
-    public void setInfrastructureDistance(double infrastructureDistance) {
-        this.infrastructureDistance = infrastructureDistance;
+    public void setHasPool(boolean hasPool) {
+        this.hasPool = hasPool;
     }
 
     @Override
     public String toString() {
-        return this.getClass().getName().split("\\.")[2] + "{" +
-                "area=" + area +
-                ", roomCount=" + roomCount +
-                ", residentalArea='" + residentalArea + '\'' +
-                ", pricePeSquareMeter=" + pricePeSquareMeter +
-                ", infrastructureDistance=" + infrastructureDistance +
-                '}';
+        return super.toString() +  ", terraceArea='" + terraceArea + '\'' +
+                ", hasPool=" + hasPool;
     }
 
-    public void parse(String line)
-    {
-        this.area = Double.parseDouble(line.split(" ")[1]);
-        this.roomCount = Integer.parseInt(line.split(" ")[2]);
-        this.residentalArea = line.split(" ")[3];
-        this.pricePeSquareMeter = Double.parseDouble(line.split(" ")[4]);
-        this.infrastructureDistance = Double.parseDouble(line.split(" ")[5]);
-
-    }
     @Override
-    public int compareTo(Flat flat)
-    {
-        return this.getPricePeSquareMeter() > flat.getPricePeSquareMeter() ? 1 :
-                this.getPricePeSquareMeter() < flat.getPricePeSquareMeter() ? -1 : 0;
+    public void parse(String line) {
+        super.parse(line);
+        this.terraceArea = Double.parseDouble(line.split(" ")[6]);
+        this.hasPool = Boolean.parseBoolean(line.split(" ")[7]);
     }
 }
