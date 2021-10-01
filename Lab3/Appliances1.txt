@@ -1,0 +1,22 @@
+fridge WTNF_923_W Whirlpool 14000 110
+fridge TIAA_14 Indesit 7000 80
+fridge KGN39UL316 Bosch 16800 100
+fridge RB33J3200EL/UA Samsung 15000 90
+fridge CCTOS_502W/PN Candy 5500 75
+fridge CNbe_4313 Liebherr 21000 90
+washing_machine WW60K40G09WDUA Indesit 14000 30
+washing_machine E2SC_2150_W Samsung 6300 40
+washing_machine RO_1284DWMCE/1-S Candy 9900 45
+washing_machine AWE_66710 Whirlpool 10099 35
+washing_machine WAJ20170UA Bosch 11299 45
+cookstove CCGMEE9025PX/E Candy 23099 3600
+cookstove IS5G0PMW/E Indesit 6399 3600
+cookstove AKT6465S Whirlpool 6939 3500
+cookstove NA64H3010AK Samsung 7598 3500
+cookstove HXS59AI50Q Bosch 20999 3400
+dishwasher SPV2IKX10E Bosch 12999 2400
+dishwasher CDCP_8/EE Whirlpool 10999 1900
+dishwasher DSCFE_1B10_S Indesit 9500 1900
+dishwasher DW60M5050BB/WT Samsung 11999 2400
+dishwasher CDCP_8/E Candy 8499 2400
+

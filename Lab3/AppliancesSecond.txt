@@ -1,0 +1,5 @@
+vacuum_cleaner VCC45W0S3R/UK_red Samsung 2499 700
+vacuum_cleaner PVC_2214_ME_white Prime 2697 450
+vacuum_cleaner Mi_Vacuum_Cleaner_G10 Xiaomi 5999 450
+vacuum_cleaner VL1602_Bagless Whirlpool 20526 600
+vacuum_cleaner BGC05AAA1 Bosch 2199 700
