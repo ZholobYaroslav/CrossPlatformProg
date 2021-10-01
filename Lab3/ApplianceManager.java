@@ -65,12 +65,12 @@ public class ApplianceManager
             }
             System.out.println();
         } while(!falseInput.equals("exit"));
+        scanner.close();
     }
 
     public void readFromFile(String pathname)
     {
         try {
-            //appliances.clear();
             Scanner scanner = new Scanner(new File(pathname));
             while (scanner.hasNextLine())
             {
@@ -79,7 +79,6 @@ public class ApplianceManager
                 appliance.parse(line);
                 appliances.add(appliance);
             }
-            //this.showAppliances();
         }
         catch(Exception exception)
         {
@@ -123,7 +122,6 @@ public class ApplianceManager
                 this.producer_models_Map.put(key, value);
             }
         }
-        //this.showMapAll();
     }
     public void showMapAll()
     {
@@ -192,12 +190,10 @@ public class ApplianceManager
 
     public void frequencyOfDiffNames()
     {
-        //appliances.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
         LinkedHashMap<String, Integer> frequencies =new LinkedHashMap<>();
         if(appliances.size() == 0)
         {
             this.readFromFile(pathname1Mixed);
-            //this.showAppliances();
         }
         for (Appliance app: appliances)
         {
@@ -232,20 +228,13 @@ public class ApplianceManager
 
     public void thirdTask(String pathname1,String pathname2)
     {
-        // ??
         List<Appliance> unmodifiableList = Collections.unmodifiableList(appliances);
-        //List<Appliance> unmodifiableList = Collections.unmodifiableList(new ArrayList<Appliance>(appliances));
-        //this.appliances = unmodifiableList;
-        //
         appliances.clear();
         this.readFromFile(pathname1);
         this.readFromFile(pathname2);
         System.out.println("Common collection: ");
         this.showAppliances();
-        this.appliances.sort(Comparator.naturalOrder()); //- reversed order then in Appliance.compareTo()
-        //unmodifiableList.sort(Comparator.reverseOrder()); //- natural order in Appliance.compareTo()
-        //System.out.println("Sorted Common collection (descending order): ");
-        //this.showAppliances();
+        this.appliances.sort(Comparator.naturalOrder());
         System.out.println("Sorted Common collection (descending order) unmodifiableList: ");
         this.showAppliancesSpecific(unmodifiableList);
         System.out.println("Are unmodifiable & modifiable collections equal: "+ this.collectionsAreEqual(appliances, unmodifiableList));
